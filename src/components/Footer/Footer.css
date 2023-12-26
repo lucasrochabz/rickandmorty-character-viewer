@@ -1,0 +1,11 @@
+.footer {
+  background-color: #202329;
+  color: #9e9e9e;
+  text-align: left;
+  padding: 20px 40px;
+  margin-top: 20px;
+}
+
+.footer h3, h4, p {
+  margin: 10px 0px;
+}

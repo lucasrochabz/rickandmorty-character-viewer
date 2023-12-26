@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { CharacterList } from './components/CharacterList/CharacterList';
+import { Header } from './components/Header/Header';
+import { Footer } from './components/Footer/Footer';
 import './App.css';
 
 export const App = () => {
@@ -44,6 +46,7 @@ export const App = () => {
 
   return(
     <>
+      <Header />
       {loading && <p>Carregando...</p>}
       {!loading && (
         <>
@@ -59,6 +62,7 @@ export const App = () => {
           </div>
         </>
       )}
+      <Footer />
     </>
   )
 }
