@@ -2,9 +2,19 @@
   background-color: black;
   color: #55cc44;
   padding: 10px;
-  margin-bottom: 20px;
 }
 
 .header h1 {
   margin: 10px;
+}
+
+.header li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.header a {
+  color: #55cc44;
+  text-transform: uppercase;
 }

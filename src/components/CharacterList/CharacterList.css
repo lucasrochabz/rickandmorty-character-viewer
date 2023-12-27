@@ -1,3 +1,5 @@
 .character-list-container {
   max-width: 1400px;
+  background-color: #f7f7f7;
+  padding: 20px;
 }
