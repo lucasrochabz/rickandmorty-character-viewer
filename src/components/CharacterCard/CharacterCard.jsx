@@ -1,10 +1,12 @@
-import './CharacterCard.css'
+import './CharacterCard.css';
 
-export const CharacterCard = ({character}) => {
-  return(
-    <div className='character-card'>
-      <img src={character.image} alt={character.name} />
-      <h1>{character.name}</h1>
+export const CharacterCard = ({ character }) => {
+  return (
+    <div className="character-card">
+      <figure>
+        <img src={character.image} alt={character.name} />
+      </figure>
+      <h2>{character.name}</h2>
     </div>
-  )
-}
+  );
+};
