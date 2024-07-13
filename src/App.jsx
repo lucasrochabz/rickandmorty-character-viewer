@@ -7,15 +7,19 @@ import './App.css';
 
 export const App = () => {
   const [characters, setCharacters] = useState([]);
+  const [info, setInfo] = useState([]);
 
   const loadCharacters = async (page = 1) => {
     const response = await fetch(
       `https://rickandmortyapi.com/api/character/?page=${page}`,
     );
     const data = await response.json();
-    const loadedCharacters = data.results;
+    const results = data.results;
+    const infoResults = data.info;
 
-    setCharacters(loadedCharacters);
+    setCharacters(results);
+    setInfo(infoResults);
+    console.log(infoResults);
     // setCurrentPage(page);
     // setTotalPages(data.info.pages);
   };
@@ -27,7 +31,7 @@ export const App = () => {
   return (
     <>
       <Header />
-      {/* <Navigation /> */}
+      <Navigation info={info} />
       <>
         <CharacterList characters={characters} />
       </>
