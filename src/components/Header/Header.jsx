@@ -1,15 +1,23 @@
-import './Header.css'
+import './Header.css';
 
 export const Header = () => {
-  return(
-    <div className='header'>
-      <h1>Rick and Morty</h1>
-      <div>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Sobre</a></li>
-        </ul>
+  return (
+    <section className="header-bg">
+      <div className="header">
+        <h2>Rick and Morty</h2>
+
+        <nav>
+          <ul className="nav">
+            <li>
+              <a href="#">Home</a>
+            </li>
+
+            <li>
+              <a href="#">Sobre</a>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};

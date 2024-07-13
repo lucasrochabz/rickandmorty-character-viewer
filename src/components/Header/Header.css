@@ -1,14 +1,27 @@
-.header {
+.header-bg {
   background-color: black;
   color: #55cc44;
+  padding: 1rem 0;
+}
+
+.header {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .header li {
   list-style: none;
-  display: inline-block;
 }
 
 .header a {
   color: #55cc44;
-  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
 }
