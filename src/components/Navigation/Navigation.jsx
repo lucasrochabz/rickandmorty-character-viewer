@@ -1,15 +1,21 @@
+import { useState } from 'react';
 import './Navigation.css';
 
 export const Navigation = ({ info }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
   const handlePrevPage = () => {
-    console.log('clicou em anterior');
+    const prevpage = currentPage - 1;
+    setCurrentPage(prevpage);
+    console.log(`você está na página ${prevpage}`);
   };
 
   const handleNextPage = () => {
-    console.log('clicou em próximo');
+    const nextpage = currentPage + 1;
+    setCurrentPage(nextpage);
+    console.log(`você está na página ${nextpage}`);
   };
 
-  // const [currentPage, setCurrentPage] = useState(1);
   // const [totalPages, setTotalPages] = useState(1);
 
   // const handlePrevPage = async () => {
@@ -31,7 +37,9 @@ export const Navigation = ({ info }) => {
       <h2>Navigation</h2>
       <div>
         <button onClick={handlePrevPage}>Página Anterior</button>
-        <span>Página atual de total</span>
+        <span>
+          {currentPage} de {info.pages}
+        </span>
         <button onClick={handleNextPage}>Próxima Página</button>
       </div>
 

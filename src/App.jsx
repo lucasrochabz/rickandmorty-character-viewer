@@ -19,7 +19,7 @@ export const App = () => {
 
     setCharacters(results);
     setInfo(infoResults);
-    console.log(infoResults);
+    // console.log(infoResults);
     // setCurrentPage(page);
     // setTotalPages(data.info.pages);
   };
