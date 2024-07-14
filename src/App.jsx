@@ -8,6 +8,7 @@ import './App.css';
 export const App = () => {
   const [characters, setCharacters] = useState([]);
   const [info, setInfo] = useState([]);
+  const [totalPages, setTotalPages] = useState();
 
   const loadCharacters = async (page = 1) => {
     const response = await fetch(
@@ -15,13 +16,12 @@ export const App = () => {
     );
     const data = await response.json();
     const results = data.results;
+    const pages = data.info.pages;
     const infoResults = data.info;
 
     setCharacters(results);
+    setTotalPages(pages);
     setInfo(infoResults);
-    // console.log(infoResults);
-    // setCurrentPage(page);
-    // setTotalPages(data.info.pages);
   };
 
   useEffect(() => {
@@ -31,7 +31,11 @@ export const App = () => {
   return (
     <>
       <Header />
-      <Navigation info={info} />
+      <Navigation
+        info={info}
+        totalPages={totalPages}
+        loadCharacters={loadCharacters}
+      />
       <>
         <CharacterList characters={characters} />
       </>
