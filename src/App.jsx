@@ -31,12 +31,12 @@ export const App = () => {
   return (
     <>
       <Header />
-      <Navigation
-        info={info}
-        totalPages={totalPages}
-        loadCharacters={loadCharacters}
-      />
       <>
+        <Navigation
+          info={info}
+          totalPages={totalPages}
+          loadCharacters={loadCharacters}
+        />
         <CharacterList characters={characters} />
       </>
       <Footer />

@@ -22,13 +22,24 @@ export const Navigation = ({ info, totalPages, loadCharacters }) => {
 
   return (
     <>
-      <h2>Navigation</h2>
-      <div>
-        <button onClick={handlePrevPage}>Página Anterior</button>
+      <div className="navigation">
+        <button
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+          className={currentPage === 1 ? 'disabled' : ''}
+        >
+          Página Anterior
+        </button>
         <span>
           {currentPage} de {totalPages}
         </span>
-        <button onClick={handleNextPage}>Próxima Página</button>
+        <button
+          onClick={handleNextPage}
+          disabled={currentPage === totalPages}
+          className={currentPage === totalPages ? 'disabled' : ''}
+        >
+          Próxima Página
+        </button>
       </div>
     </>
   );
