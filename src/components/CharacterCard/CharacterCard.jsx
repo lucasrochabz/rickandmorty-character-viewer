@@ -1,9 +1,6 @@
 import './CharacterCard.css';
 
 export const CharacterCard = ({ character }) => {
-  {
-    console.log(character);
-  }
   return (
     <div className="character-card">
       <figure>
