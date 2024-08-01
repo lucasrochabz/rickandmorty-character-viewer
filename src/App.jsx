@@ -46,11 +46,6 @@ export const App = () => {
 
       {loading ? <p>Loading...</p> : <CharacterList characters={characters} />}
 
-      <Navigation
-        info={info}
-        totalPages={totalPages}
-        loadCharacters={loadCharacters}
-      />
       <Footer />
     </>
   );
