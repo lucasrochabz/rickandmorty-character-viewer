@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import './Navigation.css';
+import { UserContext } from '../../contexts/UserContext';
 
-export const Navigation = ({ info, totalPages, loadCharacters }) => {
+export const Navigation = () => {
+  // Usa o contexto para obter totalPages, e loadCharacters
+  const { totalPages, loadCharacters } = useContext(UserContext);
   const [currentPage, setCurrentPage] = useState(1);
 
   const handlePrevPage = async () => {
@@ -21,26 +24,24 @@ export const Navigation = ({ info, totalPages, loadCharacters }) => {
   };
 
   return (
-    <>
-      <div className="navigation">
-        <button
-          onClick={handlePrevPage}
-          disabled={currentPage === 1}
-          className={currentPage === 1 ? 'disabled' : ''}
-        >
-          Página Anterior
-        </button>
-        <span>
-          {currentPage} de {totalPages}
-        </span>
-        <button
-          onClick={handleNextPage}
-          disabled={currentPage === totalPages}
-          className={currentPage === totalPages ? 'disabled' : ''}
-        >
-          Próxima Página
-        </button>
-      </div>
-    </>
+    <div className="navigation">
+      <button
+        onClick={handlePrevPage}
+        disabled={currentPage === 1}
+        className={currentPage === 1 ? 'disabled' : ''}
+      >
+        Página Anterior
+      </button>
+      <span>
+        {currentPage} de {totalPages}
+      </span>
+      <button
+        onClick={handleNextPage}
+        disabled={currentPage === totalPages}
+        className={currentPage === totalPages ? 'disabled' : ''}
+      >
+        Próxima Página
+      </button>
+    </div>
   );
 };

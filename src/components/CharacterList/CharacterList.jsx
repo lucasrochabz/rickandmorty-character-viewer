@@ -1,7 +1,12 @@
+import { useContext } from 'react';
+import { UserContext } from '../../contexts/UserContext';
 import { CharacterCard } from '../CharacterCard/CharacterCard';
 import './CharacterList.css';
 
-export const CharacterList = ({ characters }) => {
+export const CharacterList = () => {
+  // Usa o contexto para obter characters
+  const { characters } = useContext(UserContext);
+
   return (
     <main className="character-list-bg">
       <div className="character-list">
