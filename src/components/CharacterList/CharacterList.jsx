@@ -4,7 +4,7 @@ import { CharacterCard } from '../CharacterCard/CharacterCard';
 import './CharacterList.css';
 
 export const CharacterList = () => {
-  // Usa o contexto para obter characters
+  // Usa o contexto para obter loading e characters
   const { loading, characters } = useContext(CharacterContext);
 
   return (

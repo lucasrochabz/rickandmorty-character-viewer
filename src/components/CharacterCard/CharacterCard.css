@@ -25,10 +25,28 @@
   align-items: center;
 }
 
-.character-status-icon {
+.character-status-icon-green {
   display: block;
   border-radius: 50%;
   background-color: green;
+  height: 0.8rem;
+  width: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.character-status-icon-red {
+  display: block;
+  border-radius: 50%;
+  background-color: red;
+  height: 0.8rem;
+  width: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.character-status-icon-grey {
+  display: block;
+  border-radius: 50%;
+  background-color: grey;
   height: 0.8rem;
   width: 0.8rem;
   margin-right: 0.5rem;
