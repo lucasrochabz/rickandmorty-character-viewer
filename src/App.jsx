@@ -1,5 +1,4 @@
-import React from 'react';
-import { UserProvider } from './contexts/UserContext';
+import { CharacterProvider } from './contexts/CharacterContext';
 import { Header } from './components/Header/Header';
 import { Footer } from './components/Footer/Footer';
 import { Navigation } from './components/Navigation/Navigation';
@@ -8,11 +7,11 @@ import './App.css';
 
 export const App = () => {
   return (
-    <UserProvider>
+    <CharacterProvider>
       <Header />
       <Navigation />
       <CharacterList />
       <Footer />
-    </UserProvider>
+    </CharacterProvider>
   );
 };

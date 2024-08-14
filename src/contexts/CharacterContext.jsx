@@ -2,42 +2,38 @@ import React, { createContext, useState, useEffect } from 'react';
 import { useLoading } from '../hooks/useLoading';
 
 // Criação do contexto
-export const UserContext = createContext();
+export const CharacterContext = createContext();
 
 // Provider do contexto
-export const UserProvider = ({ children }) => {
+export const CharacterProvider = ({ children }) => {
   const [characters, setCharacters] = useState([]);
   const [info, setInfo] = useState({});
   const [totalPages, setTotalPages] = useState(0);
   const { loading, startLoading, stopLoading } = useLoading();
 
+  // Função para carregar personagens
   const loadCharacters = async (page = 1) => {
     startLoading();
-    try {
-      const response = await fetch(
-        `https://rickandmortyapi.com/api/character/?page=${page}`,
-      );
-      if (!response.ok) throw new Error('Network response was not ok');
-      const data = await response.json();
-      setCharacters(data.results);
-      setInfo(data.info);
-      setTotalPages(data.info.pages);
-    } catch (error) {
-      console.error('Error fetching characters:', error);
-    } finally {
-      stopLoading();
-    }
+    const response = await fetch(
+      `https://rickandmortyapi.com/api/character/?page=${page}`,
+    );
+    const data = await response.json();
+    setCharacters(data.results);
+    setInfo(data.info);
+    setTotalPages(data.info.pages);
+    stopLoading();
   };
 
+  // Carregar personagens ao montar o componente
   useEffect(() => {
     loadCharacters();
   }, []);
 
   return (
-    <UserContext.Provider
+    <CharacterContext.Provider
       value={{ characters, info, totalPages, loading, loadCharacters }}
     >
       {children}
-    </UserContext.Provider>
+    </CharacterContext.Provider>
   );
 };

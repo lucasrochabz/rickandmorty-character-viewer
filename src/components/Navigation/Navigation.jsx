@@ -1,10 +1,10 @@
 import { useState, useContext } from 'react';
 import './Navigation.css';
-import { UserContext } from '../../contexts/UserContext';
+import { CharacterContext } from '../../contexts/CharacterContext';
 
 export const Navigation = () => {
   // Usa o contexto para obter totalPages, e loadCharacters
-  const { totalPages, loadCharacters } = useContext(UserContext);
+  const { totalPages, loadCharacters } = useContext(CharacterContext);
   const [currentPage, setCurrentPage] = useState(1);
 
   const handlePrevPage = async () => {
