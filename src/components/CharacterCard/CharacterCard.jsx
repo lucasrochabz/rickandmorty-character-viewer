@@ -19,6 +19,7 @@ export const CharacterCard = ({ character }) => {
       </figure>
       <div className="character-info">
         <h2>{character.name}</h2>
+        <h4>{character.species}</h4>
         <span className="character-status">
           <span className={getStatusClass(character.status)}></span>
           {character.status}
