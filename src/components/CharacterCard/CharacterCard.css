@@ -25,29 +25,22 @@
   align-items: center;
 }
 
-.character-status-icon-green {
+.character-icon {
   display: block;
   border-radius: 50%;
+  height: 0.8rem;
+  width: 0.8rem;
+  margin-right: 0.5rem;
+}
+
+.status-green {
   background-color: green;
-  height: 0.8rem;
-  width: 0.8rem;
-  margin-right: 0.5rem;
 }
 
-.character-status-icon-red {
-  display: block;
-  border-radius: 50%;
+.status-red {
   background-color: red;
-  height: 0.8rem;
-  width: 0.8rem;
-  margin-right: 0.5rem;
 }
 
-.character-status-icon-grey {
-  display: block;
-  border-radius: 50%;
+.status-grey {
   background-color: grey;
-  height: 0.8rem;
-  width: 0.8rem;
-  margin-right: 0.5rem;
 }

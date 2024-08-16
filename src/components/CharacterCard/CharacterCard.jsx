@@ -1,15 +1,14 @@
-import { useState } from 'react';
 import './CharacterCard.css';
 
 export const CharacterCard = ({ character }) => {
   const getStatusClass = (status) => {
     switch (status) {
       case 'Dead':
-        return 'character-status-icon-red';
+        return 'character-icon status-red';
       case 'unknown':
-        return 'character-status-icon-grey';
+        return 'character-icon status-grey';
       default:
-        return 'character-status-icon-green';
+        return 'character-icon status-green';
     }
   };
 
